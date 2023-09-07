@@ -1,0 +1,12 @@
+version: "3.7"
+services:
+  geyser:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    container_name: geyser
+    restart: unless-stopped
+    ports:
+      - "19132:19132/udp"
+    volumes:
+      - ./geyser-data:/var/lib/geyser
